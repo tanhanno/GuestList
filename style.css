@@ -1,0 +1,89 @@
+:root {
+  --main-color: #96c291;
+  --accent-color: #ffdbaa;
+  --light-color: #f4eeee;
+  --dark-color: #272525;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  background-color: var(--accent-color);
+  height: 100px;
+}
+
+main {
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  height: calc(100vh - 200px);
+  color: var(--dark-color);
+  padding: 24px;
+
+  font-family: "Merriweather", serif;
+  font-weight: 600;
+  font-style: normal;
+  p {
+    font-family: "Quintessential", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(2, 1fr);
+
+  label {
+    text-align: end;
+    margin: 6px;
+    font-size: 16px;
+    padding: 2px;
+  }
+  #name {
+    width: 140px;
+    margin: 6px;
+    padding: 2px 12px;
+    border-radius: 15px;
+    font-size: 16px;
+  }
+  #name:focus {
+    border: 1px solid var(--dark-color);
+    background-color: var(--light-color);
+  }
+  button {
+    grid-column: span 2;
+    width: 250px;
+    background-color: var(--accent-color);
+    border: 2px solid var(--light-color);
+    border-radius: 15px;
+  }
+  button:hover {
+    background-color: var(--main-color);
+    border: 2px solid var(--dark-color);
+    filter: drop-shadow(2px 2px 3px var(--dark-color));
+  }
+}
+
+#partyInfo {
+  display: none;
+}
+#partyInfo.active {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 1000px;
+  display: block;
+
+  div {
+    padding: 12px;
+  }
+}
